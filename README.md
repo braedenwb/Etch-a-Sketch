@@ -1,2 +1,3 @@
-# Etch-a-Sketch
-A web browser Etch-a-Sketch for drawing simple pixel art 
+# Etch-a-Sketch Project
+A web browser Etch-a-Sketch that can be used for drawing simple pixel art
+
