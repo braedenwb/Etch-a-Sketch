@@ -4,10 +4,20 @@ body {
     margin: 0;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 128px;
+@media (max-width: 1280px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 128px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 360px;
+    }
 }
 
 .header-title {
