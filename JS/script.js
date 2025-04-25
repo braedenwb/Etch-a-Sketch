@@ -2,11 +2,20 @@
 
 const gridContainer = document.querySelector(".grid-container");
 
+function main()
+{
+    createGrid(64);
+}
+
 function createGrid(gridSize)
 {
     for(let i = 0; i < gridSize; i++)
     {
         const gridItem = document.createElement("div");
+
+        gridItem.style.width = `calc(100% / ${Math.sqrt(gridSize)})`;
+        gridItem.style.height = `calc(100% / ${Math.sqrt(gridSize)})`;
+
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
 
@@ -15,8 +24,12 @@ function createGrid(gridSize)
         });
         gridItem.addEventListener("mouseleave", () => {
             gridItem.classList.remove("grid-item-hover");
-        })
+        });
+
+        gridItem.addEventListener("mouseover", () => {
+            gridItem.style.background = "black";
+        });
     }
 }
 
-createGrid(16);
+main();
