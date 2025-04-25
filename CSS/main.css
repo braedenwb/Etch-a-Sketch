@@ -60,6 +60,10 @@ body {
   border: 2px solid hsl(0, 0%, 80%);
 }
 
+.grid-item-hover {
+  opacity: 80%;
+}
+
 a {
   text-decoration: none;
   color: inherit;

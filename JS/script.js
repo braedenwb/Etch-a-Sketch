@@ -9,6 +9,13 @@ function createGrid(gridSize)
         const gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
+
+        gridItem.addEventListener("mouseenter", () => {
+            gridItem.classList.add("grid-item-hover");
+        });
+        gridItem.addEventListener("mouseleave", () => {
+            gridItem.classList.remove("grid-item-hover");
+        })
     }
 }
 
