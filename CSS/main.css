@@ -1,49 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background: hsl(202, 36%, 19%);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background: hsl(202, 36%, 19%);
 }
 
 @media (max-width: 1280px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        padding: 16px 128px;
-    }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 16px 128px;
+    margin-bottom: 48px;
+  }
 }
 
 @media (min-width: 1280px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        padding: 16px 360px;
-    }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 16px 360px;
+    margin-bottom: 48px;
+  }
 }
 
 .header-title {
-    color: rgb(205, 205, 205);
-    font-size: 24px;
-    font-weight: 600;
-    padding: 0;
-    margin: 0;
+  color: hsl(0, 0%, 80%);
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
 }
 
 .header-links {
-    color: rgb(205, 205, 205);
-    list-style: none;
-    font-size: 18px;
-    font-weight: 600;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    gap: 16px;
+  color: hsl(0, 0%, 80%);
+  list-style: none;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  width: 500px;
+  height: 500px;
+  border: 2px solid hsl(0, 0%, 80%);
+}
+
+.grid-item {
+  width: calc(100% / 4);
+  height: calc(100% / 4);
+  box-sizing: border-box;
+  border: 2px solid hsl(0, 0%, 80%);
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
