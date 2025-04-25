@@ -44,6 +44,10 @@ body {
   gap: 16px;
 }
 
+.main-container {
+  color: hsl(0, 0%, 80%);
+}
+
 .grid-container {
   display: flex;
   flex-wrap: wrap;
