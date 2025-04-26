@@ -2,11 +2,6 @@
 
 const gridContainer = document.querySelector(".grid-container");
 
-function main()
-{
-    createGrid(64);
-}
-
 function createGrid(gridSize)
 {
     for(let i = 0; i < gridSize; i++)
@@ -30,6 +25,12 @@ function createGrid(gridSize)
             gridItem.style.background = "black";
         });
     }
+}
+
+function main()
+{
+    // 8x8 12x12 16x16 32x32
+    createGrid(144);
 }
 
 main();
