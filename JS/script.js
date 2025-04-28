@@ -1,6 +1,8 @@
 // Etch-a-Sketch
 
 const gridContainer = document.querySelector(".grid-container");
+const gridSlider = document.querySelector(".settings-slider");
+const gridSliderIndicator = document.querySelector(".settings-slider-indicator");
 
 function createGrid(gridSize)
 {
