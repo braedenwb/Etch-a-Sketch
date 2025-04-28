@@ -4,8 +4,6 @@ const gridContainer = document.querySelector(".grid-container");
 const gridSlider = document.querySelector(".settings-slider");
 const gridSliderIndicator = document.querySelector(".settings-slider-indicator");
 
-const blah = "hi";
-
 function createGrid(gridSize)
 {
     for(let i = 0; i < gridSize; i++)
