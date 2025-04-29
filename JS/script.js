@@ -77,7 +77,6 @@ function removeGrid()
 
 function main()
 {
-    // 8x8 12x12 16x16 32x32
     if(parseInt(gridSlider.value) === 3)
     {
         gridSliderIndicator.textContent = "16x16";
