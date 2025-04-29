@@ -72,7 +72,6 @@ function removeGrid()
         const gridItem = document.querySelector(".grid-item");
         gridItem.remove();
     }
-    console.log("hi");
 }
 
 function main()
