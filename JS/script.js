@@ -14,29 +14,33 @@ function getGridSlider()
             removeGrid();
             gridSize = 64;
             gridSliderIndicator.textContent = "8x8";
+            main();
         }
         else if (parseInt(gridSlider.value) === 2)
         {
             removeGrid();
             gridSize = 144;
             gridSliderIndicator.textContent = "12x12";
+            main();
         }
         else if (parseInt(gridSlider.value) === 3)
         {
             removeGrid();
             gridSize = 256;
             gridSliderIndicator.textContent = "16x16";
+            main();
         }
         else
         {
             removeGrid();
             gridSize = 1024;
             gridSliderIndicator.textContent = "32x32";
+            main();
         }
     })
 }
 
-function createGrid(gridSize)
+function createGrid()
 {
     for(let i = 0; i < gridSize; i++)
     {
@@ -63,7 +67,12 @@ function createGrid(gridSize)
 
 function removeGrid()
 {
-
+    for(let i = 0; i < gridSize; i++)
+    {
+        const gridItem = document.querySelector(".grid-item");
+        gridItem.remove();
+    }
+    console.log("hi");
 }
 
 function main()
