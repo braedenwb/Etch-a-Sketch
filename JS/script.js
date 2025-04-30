@@ -77,7 +77,7 @@ function removeGrid()
 
 function main()
 {
-    createGrid(gridSize);
+    createGrid();
     getGridSlider();
 }
 
