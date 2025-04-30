@@ -46,6 +46,7 @@ function createGrid()
     {
         const gridItem = document.createElement("div");
 
+        gridItem.style.background = "white";
         gridItem.style.width = `calc(100% / ${Math.sqrt(gridSize)})`;
         gridItem.style.height = `calc(100% / ${Math.sqrt(gridSize)})`;
 
@@ -76,13 +77,13 @@ function removeGrid()
 
 function main()
 {
-    if(parseInt(gridSlider.value) === 3)
-    {
-        gridSliderIndicator.textContent = "16x16";
-    }
-
     createGrid(gridSize);
     getGridSlider();
+}
+
+if(parseInt(gridSlider.value) === 3)
+{
+    gridSliderIndicator.textContent = "16x16";
 }
 
 main();
