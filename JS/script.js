@@ -4,6 +4,7 @@ const gridContainer = document.querySelector(".grid-container");
 const gridSlider = document.querySelector(".settings-slider");
 const gridSliderIndicator = document.querySelector(".settings-slider-indicator");
 const gridLinesToggle = document.querySelector(".gridline-checkbox");
+const clearGridButton = document.querySelector(".clear-button");
 
 let gridSize = 256;
 
@@ -12,28 +13,28 @@ function getGridSlider()
     gridSlider.addEventListener("input", () => {
         if (parseInt(gridSlider.value) === 1)
         {
-            removeGrid();
+            clearGrid();
             gridSize = 64;
             gridSliderIndicator.textContent = "8x8";
             main();
         }
         else if (parseInt(gridSlider.value) === 2)
         {
-            removeGrid();
+            clearGrid();
             gridSize = 144;
             gridSliderIndicator.textContent = "12x12";
             main();
         }
         else if (parseInt(gridSlider.value) === 3)
         {
-            removeGrid();
+            clearGrid();
             gridSize = 256;
             gridSliderIndicator.textContent = "16x16";
             main();
         }
         else
         {
-            removeGrid();
+            clearGrid();
             gridSize = 1024;
             gridSliderIndicator.textContent = "32x32";
             main();
@@ -84,7 +85,7 @@ function createGrid()
     }
 }
 
-function removeGrid()
+function clearGrid()
 {
     for (let i = 0; i < gridSize; i++)
     {
@@ -102,7 +103,12 @@ function main()
             gridItems.style.border = "1px solid black";
         }
     });
+
     getGridSlider();
+    clearGridButton.addEventListener("click", () => {
+        clearGrid();
+        createGrid();
+    })
 }
 
 if(parseInt(gridSlider.value) === 3)
