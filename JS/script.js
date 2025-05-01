@@ -3,13 +3,14 @@
 const gridContainer = document.querySelector(".grid-container");
 const gridSlider = document.querySelector(".settings-slider");
 const gridSliderIndicator = document.querySelector(".settings-slider-indicator");
+const gridLinesToggle = document.querySelector(".gridline-checkbox");
 
 let gridSize = 256;
 
 function getGridSlider()
 {
     gridSlider.addEventListener("input", () => {
-        if(parseInt(gridSlider.value) === 1)
+        if (parseInt(gridSlider.value) === 1)
         {
             removeGrid();
             gridSize = 64;
@@ -49,13 +50,30 @@ function createGrid()
         gridItem.style.background = "white";
         gridItem.style.width = `calc(100% / ${Math.sqrt(gridSize)})`;
         gridItem.style.height = `calc(100% / ${Math.sqrt(gridSize)})`;
+        
+        if (gridLinesToggle.checked === true)
+        {
+            gridItem.style.border = "1px solid black";
+        }
 
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
 
+        gridLinesToggle.addEventListener("change", () => {
+            if (gridLinesToggle.checked === true)
+            {
+                gridItem.style.border = "1px solid black";
+            }
+            else
+            {
+                gridItem.style.border = "none";
+            }
+        });
+
         gridItem.addEventListener("mouseenter", () => {
             gridItem.classList.add("grid-item-hover");
         });
+
         gridItem.addEventListener("mouseleave", () => {
             gridItem.classList.remove("grid-item-hover");
         });
@@ -68,7 +86,7 @@ function createGrid()
 
 function removeGrid()
 {
-    for(let i = 0; i < gridSize; i++)
+    for (let i = 0; i < gridSize; i++)
     {
         const gridItem = document.querySelector(".grid-item");
         gridItem.remove();
@@ -78,6 +96,12 @@ function removeGrid()
 function main()
 {
     createGrid();
+    gridLinesToggle.addEventListener("change", () => {
+        if (gridLinesToggle.checked)
+        {
+            gridItems.style.border = "1px solid black";
+        }
+    });
     getGridSlider();
 }
 
