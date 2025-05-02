@@ -76,6 +76,8 @@ body {
   margin-bottom: 15px;
   border: none;
   border-radius: 5px;
+  height: 40px;
+  user-select: none;
 }
 
 .settings-slider-title {
@@ -88,6 +90,7 @@ body {
   width: 100px;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 .settings-slider-indicator {
