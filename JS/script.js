@@ -6,11 +6,11 @@ const gridSlider = document.querySelector(".settings-slider");
 const gridSliderIndicator = document.querySelector(".settings-slider-indicator");
 const gridLinesToggle = document.querySelector(".gridline-checkbox");
 const clearGridButton = document.querySelector(".clear-button");
-const defaultColor = "#000000";
+const colorSelector = document.querySelector(".settings-color-selector");
 
 let gridSize = 256;
 let mouseDown = false;
-let currentColor = defaultColor;
+let currentColor = colorSelector.value;
 
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -88,29 +88,23 @@ function createGrid()
         });
 
         gridItem.addEventListener("mouseover", draw);
-        gridItem.addEventListener("mousedown", () => {
-            if (!mouseDown)
-            {
-                console.log("drew single");
-            }
-            else
-            {
-                draw("mousedown");
-            }
-        });
+        gridItem.addEventListener("mousedown", draw);
     }
 }
 
 function draw(event)
 {
-    if (event.type === "mouseover" && !mouseDown)
+    if (event.type === "mousedown" && !mouseDown)
     {
-        console.log("failed");
-        return
+        this.style.background = colorSelector.value;
     }
-    if (mouseDown)
+    else if (mouseDown)
     {
-        console.log("hi");
+        this.style.background = colorSelector.value;
+    }
+    else
+    {
+        return;
     }
 }
 
