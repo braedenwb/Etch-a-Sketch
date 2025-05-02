@@ -1,12 +1,20 @@
 // Etch-a-Sketch
 
+const body = document.querySelector("body");
 const gridContainer = document.querySelector(".grid-container");
 const gridSlider = document.querySelector(".settings-slider");
 const gridSliderIndicator = document.querySelector(".settings-slider-indicator");
 const gridLinesToggle = document.querySelector(".gridline-checkbox");
 const clearGridButton = document.querySelector(".clear-button");
+const defaultColor = "#000000";
 
 let gridSize = 256;
+let mouseDown = false;
+let currentColor = defaultColor;
+
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
 
 function getGridSlider()
 {
@@ -79,9 +87,30 @@ function createGrid()
             gridItem.classList.remove("grid-item-hover");
         });
 
-        gridItem.addEventListener("mouseover", () => {
-            gridItem.style.background = "black";
+        gridItem.addEventListener("mouseover", draw);
+        gridItem.addEventListener("mousedown", () => {
+            if (!mouseDown)
+            {
+                console.log("drew single");
+            }
+            else
+            {
+                draw("mousedown");
+            }
         });
+    }
+}
+
+function draw(event)
+{
+    if (event.type === "mouseover" && !mouseDown)
+    {
+        console.log("failed");
+        return
+    }
+    if (mouseDown)
+    {
+        console.log("hi");
     }
 }
 

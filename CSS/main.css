@@ -116,6 +116,7 @@ body {
 
 .grid-item {
   box-sizing: border-box;
+  user-select: none;
 }
 
 .grid-item-hover {
